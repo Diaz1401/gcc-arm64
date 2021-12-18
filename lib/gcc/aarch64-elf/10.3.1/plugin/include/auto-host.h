@@ -367,13 +367,13 @@
 /* Define if your assembler supports dwarf2 .file/.loc directives, and
    preserves file table indices exactly as given. */
 #ifndef USED_FOR_TARGET
-/* #undef HAVE_AS_DWARF2_DEBUG_LINE */
+#define HAVE_AS_DWARF2_DEBUG_LINE 1
 #endif
 
 
 /* Define if your assembler supports views in dwarf2 .loc directives. */
 #ifndef USED_FOR_TARGET
-/* #undef HAVE_AS_DWARF2_DEBUG_VIEW */
+#define HAVE_AS_DWARF2_DEBUG_VIEW 1
 #endif
 
 
@@ -752,7 +752,7 @@
 
 /* Define 0/1 if your assembler and linker support COMDAT groups. */
 #ifndef USED_FOR_TARGET
-#define HAVE_COMDAT_GROUP 0
+#define HAVE_COMDAT_GROUP 1
 #endif
 
 
@@ -1266,7 +1266,7 @@
 
 
 /* Define 0/1 if your assembler supports CFI directives. */
-#define HAVE_GAS_CFI_DIRECTIVE 0
+#define HAVE_GAS_CFI_DIRECTIVE 1
 
 /* Define 0/1 if your assembler supports .cfi_personality. */
 #define HAVE_GAS_CFI_PERSONALITY_DIRECTIVE 1
@@ -1287,7 +1287,7 @@
 
 
 /* Define if your assembler and linker support .hidden. */
-/* #undef HAVE_GAS_HIDDEN */
+#define HAVE_GAS_HIDDEN 1
 
 /* Define if your assembler supports .lcomm with an alignment field. */
 #ifndef USED_FOR_TARGET
@@ -1349,7 +1349,7 @@
 /* Define if your assembler supports .subsection and .subsection -1 starts
    emitting at the beginning of your section. */
 #ifndef USED_FOR_TARGET
-/* #undef HAVE_GAS_SUBSECTION_ORDERING */
+#define HAVE_GAS_SUBSECTION_ORDERING 1
 #endif
 
 
@@ -1497,7 +1497,7 @@
 /* Define if your linker supports --as-needed/--no-as-needed or equivalent
    options. */
 #ifndef USED_FOR_TARGET
-/* #undef HAVE_LD_AS_NEEDED */
+#define HAVE_LD_AS_NEEDED 1
 #endif
 
 
@@ -1516,7 +1516,7 @@
 
 /* Define if your linker supports --build-id. */
 #ifndef USED_FOR_TARGET
-/* #undef HAVE_LD_BUILDID */
+#define HAVE_LD_BUILDID 1
 #endif
 
 
@@ -1529,29 +1529,29 @@
 
 /* Define to the level of your linker's compressed debug section support. */
 #ifndef USED_FOR_TARGET
-#define HAVE_LD_COMPRESS_DEBUG 0
+#define HAVE_LD_COMPRESS_DEBUG 3
 #endif
 
 
 /* Define if your linker supports --demangle option. */
 #ifndef USED_FOR_TARGET
-/* #undef HAVE_LD_DEMANGLE */
+#define HAVE_LD_DEMANGLE 1
 #endif
 
 
 /* Define 0/1 if your linker supports CIE v3 in .eh_frame. */
 #ifndef USED_FOR_TARGET
-#define HAVE_LD_EH_FRAME_CIEV3 0
+#define HAVE_LD_EH_FRAME_CIEV3 1
 #endif
 
 
 /* Define if your linker supports .eh_frame_hdr. */
-/* #undef HAVE_LD_EH_FRAME_HDR */
+#define HAVE_LD_EH_FRAME_HDR 1
 
 /* Define if your linker supports garbage collection of sections in presence
    of EH frames. */
 #ifndef USED_FOR_TARGET
-/* #undef HAVE_LD_EH_GC_SECTIONS */
+#define HAVE_LD_EH_GC_SECTIONS 1
 #endif
 
 
@@ -1583,7 +1583,7 @@
 
 /* Define if your linker supports PIE option. */
 #ifndef USED_FOR_TARGET
-/* #undef HAVE_LD_PIE */
+#define HAVE_LD_PIE 1
 #endif
 
 
@@ -1601,14 +1601,14 @@
 
 /* Define if your linker supports --push-state/--pop-state */
 #ifndef USED_FOR_TARGET
-/* #undef HAVE_LD_PUSHPOPSTATE_SUPPORT */
+#define HAVE_LD_PUSHPOPSTATE_SUPPORT 1
 #endif
 
 
 /* Define if your linker links a mix of read-only and read-write sections into
    a read-write section. */
 #ifndef USED_FOR_TARGET
-/* #undef HAVE_LD_RO_RW_SECTION_MIXING */
+#define HAVE_LD_RO_RW_SECTION_MIXING 1
 #endif
 
 
@@ -1620,13 +1620,13 @@
 
 /* Define if your linker supports -Bstatic/-Bdynamic or equivalent options. */
 #ifndef USED_FOR_TARGET
-/* #undef HAVE_LD_STATIC_DYNAMIC */
+#define HAVE_LD_STATIC_DYNAMIC 1
 #endif
 
 
 /* Define if your linker supports --sysroot. */
 #ifndef USED_FOR_TARGET
-/* #undef HAVE_LD_SYSROOT */
+#define HAVE_LD_SYSROOT 1
 #endif
 
 
@@ -1656,7 +1656,7 @@
 
 /* Define to the level of your linker's plugin support. */
 #ifndef USED_FOR_TARGET
-#define HAVE_LTO_PLUGIN 0
+#define HAVE_LTO_PLUGIN 2
 #endif
 
 
@@ -2028,31 +2028,31 @@
 
 /* Define to the linker option to ignore unused dependencies. */
 #ifndef USED_FOR_TARGET
-/* #undef LD_AS_NEEDED_OPTION */
+#define LD_AS_NEEDED_OPTION "--push-state --as-needed"
 #endif
 
 
 /* Define to the linker option to enable compressed debug sections. */
 #ifndef USED_FOR_TARGET
-#define LD_COMPRESS_DEBUG_OPTION ""
+#define LD_COMPRESS_DEBUG_OPTION "--compress-debug-sections"
 #endif
 
 
 /* Define to the linker option to enable use of shared objects. */
 #ifndef USED_FOR_TARGET
-/* #undef LD_DYNAMIC_OPTION */
+#define LD_DYNAMIC_OPTION "-Bdynamic"
 #endif
 
 
 /* Define to the linker option to keep unused dependencies. */
 #ifndef USED_FOR_TARGET
-/* #undef LD_NO_AS_NEEDED_OPTION */
+#define LD_NO_AS_NEEDED_OPTION "--pop-state"
 #endif
 
 
 /* Define to the linker option to disable use of shared objects. */
 #ifndef USED_FOR_TARGET
-/* #undef LD_STATIC_OPTION */
+#define LD_STATIC_OPTION "-Bstatic"
 #endif
 
 
@@ -2138,7 +2138,7 @@
 
 /* Specify plugin linker */
 #ifndef USED_FOR_TARGET
-#define PLUGIN_LD_SUFFIX ""
+#define PLUGIN_LD_SUFFIX "ld"
 #endif
 
 
@@ -2250,7 +2250,7 @@
 
 /* Define if your assembler mis-optimizes .eh_frame data. */
 #ifndef USED_FOR_TARGET
-#define USE_AS_TRADITIONAL_FORMAT 1
+/* #undef USE_AS_TRADITIONAL_FORMAT */
 #endif
 
 
