@@ -21,7 +21,7 @@
 # Basic information
 target=aarch64-unknown-elf
 target_noncanonical=aarch64-elf
-version=12.0.0
+version=12.0.1
 
 VERBOSE=0
 while [ x$1 = x-v ] ; do
